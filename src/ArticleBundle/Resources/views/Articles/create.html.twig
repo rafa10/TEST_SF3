@@ -1,0 +1,78 @@
+{% extends "ArticleBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} - Créer {% endblock %}
+
+{% block content %}
+
+
+	<div class="row "><br><br>
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <h5 class="header2 upper center">Créer Article</h5>
+                <div class="row">
+                	<div class="col s10 offset-s1">	
+                    
+                    {{ form_start(form) }}
+
+                        <div class="row"><!-- title -->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix grey-text">create</i>
+                                {{ form_widget(form.title) }}
+                                {{ form_label(form.title, "Titre") }}
+                                <span class="help-block red-text">
+                                    <strong>{{ form_errors(form.title) }}</strong>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row"><!-- leading-->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix grey-text">sort</i>
+                                {{ form_widget(form.leadings) }}
+                                {{ form_label(form.leadings, 'L\'accroche') }}
+                                <span class="help-block red-text">
+                                    <strong>{{ form_errors(form.leadings) }}</strong>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row"><!-- body -->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix grey-text">subject</i>
+                                {{ form_widget(form.body) }}
+                                {{ form_label(form.body, 'Le corps') }}
+                                <span class="help-block red-text">
+                                    <strong>{{ form_errors(form.body) }}</strong>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row"><!-- createdBy -->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix grey-text">create</i>
+                                {{ form_widget(form.createdBy) }}
+                                {{ form_label(form.createdBy, 'L\'auteur') }}
+                                <span class="help-block red-text">
+                                    <strong>{{ form_errors(form.createdBy) }}</strong>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row"><!--button-->
+                            <div class="input-field col s12">
+                            	<a class="btn cyan waves-effect waves-light left" href="{{ path('article_homepage') }}" >Retour à la liste
+                                </a>
+                                <button class="btn cyan waves-effect waves-light green right" type="submit" name="action">Soumettre
+                                <i class="mdi-content-send right"></i>
+                            </button>
+                            </div>
+                        </div>
+
+                    {{ form_end(form) }}
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

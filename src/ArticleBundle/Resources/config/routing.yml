@@ -1,0 +1,16 @@
+article_homepage:
+    path:     /
+    defaults: { _controller: ArticleBundle:Articles:index }
+
+article_show:
+    path:     /article/{slug}
+    defaults: { _controller: ArticleBundle:Articles:show }
+
+article_create:
+    path:     /creer
+    defaults: { _controller: ArticleBundle:Articles:create }
+
+article_destroy:
+    path:     /supprimer/{id}
+    defaults: { _controller: ArticleBundle:Articles:destroy }    
+

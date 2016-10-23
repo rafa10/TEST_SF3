@@ -1,0 +1,30 @@
+{% extends "ArticleBundle::layout.html.twig" %}
+
+{% block title %} {{ parent() }} - Articles {% endblock %}
+
+{% block content %}
+
+	
+
+	    <div class="row">
+	        <div class="col s12 m8 offset-m2">
+	          <div class="card">
+	            <div class="card-content ">
+	              <div class="card-title"><b>{{articles.title}}</b> <span class="right grey-text"> par {{ articles.createdBy }} {{ articles.createdAt|date('d/m/Y') }} </span> </div>
+	              <p><br>{{articles.leadings}}<br><br><hr><br>{{articles.body}}</p>
+	            </div>
+	            <div class="card-action">
+		            <div class="row">
+						<div class="col s12 ">
+							<a class="btn cyan waves-effect waves-light left" href="{{ path('article_homepage') }}" >Retour à la liste</a>
+							<a class="btn  waves-effect waves-light red darken-2 right" href="{{ path('article_destroy',{'id':articles.id}) }}" onclick="return confirm('Vous etez sur?')">Supprimer</a>
+						</div>
+					</div>
+				</div>
+	          </div>
+	        </div>
+	    </div>    
+
+	
+
+{% endblock %}
